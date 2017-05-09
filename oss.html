@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.css">
     <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+	<link rel="stylesheet" href="./css/smartphoto.min.css">
 </head>
 
 <body>
@@ -94,6 +95,12 @@ SmartPhoto.js
 - イベントハンドラを組み込んでほしいとの要望
 </template>
 
+<template layout="bullets" type="text/x-markdown">
+	<div style="background-image:url(./images/iphone-frame.png);background-size:cover;padding:145px 35px 0 35px;">
+	<iframe src="./examples/vanilla.html" style="width:400px;height:500px;margin-top:0;margin-bottom:0;"></iframe>
+	</div>
+</template>
+
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ### 安定したJavaScript
 
@@ -120,6 +127,7 @@ OSSで配布しているJSは a-blog cms の組み込みJSに組み込まれま�
 
 <script src="./js/highlight.min.js"></script>
 <script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
+<script src="./js/smartphoto.min.js"></script>
 <script>
 	var talkie = Talkie({
 		wide: false
@@ -136,6 +144,7 @@ OSSで配布しているJSは a-blog cms の組み込みJSに組み込まれま�
 			// print presenter notes
 			console.info(talkie.notes[current.getAttribute('data-page')]);
 		});
+		new smartPhoto(".js-img-viwer");
 	});
 </script>
 </body>
