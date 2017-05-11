@@ -1,0 +1,17 @@
+.js-modal-btn {
+	display: block;
+	width: 200px;
+	font-size: 16px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	margin: 0 auto;
+	background-color: #c40f32;
+	color: #FFF;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+}
