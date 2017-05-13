@@ -26,9 +26,47 @@
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ## 今日お話しすること
 
+- コンポーネントとは
 - コンポーネントベースにすることのメリット
 - コンポーネントベースで開発するには
 - まとめ
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## コンポーネントとは
+
+HTML/CSS/JavaScriptをセットで部品化すること
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## たとえば
+
+```html
+<img src="./images/hiraku.png" />
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## Webコンポーネントの場合
+```html
+<color-box></color-box>
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## GET_Templateを使う
+
+```html
+<!-- GET_Template id="color-box" -->
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+<img src="./assets/component1.png"/>
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## つまりGET_TemplateをHTMLのタグとして考える！
 </template>
 
 
@@ -67,15 +105,69 @@
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ## コンポーネントベースで開発するには?
- - スタイルガイドの導入
+
+ - 中でa-blog cmsのモジュールを使わない
+ - コンポーネントごとにディレクトリーを切る
  - コンポーネントの命名規則
  - field.htmlの命名規則
+ - スタイルガイドの導入
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## 中でa-blog cmsのモジュールを使わない
+
+```html
+<!-- BEGIN_MODULE Entry_Summary id="hoge" -->
+<!-- BEGIN entry:loop -->
+<!-- GET_Template id="color-box" title="{title}" text="{summary}" -->
+<!-- END entry:loop -->
+<!-- END_MODULE Entry_Summary -->
+```
+
+こうすることで、Entry_Summaryではないモジュールでもコンポーネントを使用可能
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## コンポーネントごとにディレクトリーを切る
+探しやすいようにディレクトリーと同じ名前をGET_Templateのidとします
+
+<img src="./images/components.png" style="width:500px;height:auto;">
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## コンポーネントの命名規則
+さらにディレクトリーの名前をクラス名の接頭辞に
+
+```css
+.admission-card-outer {
+	background-color: #F5F3EC;
+	padding: 40px 15px;
+}
+
+.admission-card-container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+```
+</template>
+
+
+<template layout="code" type="text/x-markdown" h-left>
+## field.htmlの使い回し
+
+fieldの変数もクラス名と合わせる
+
+```html
+<input type="hidden" name="@caption-box-group[]" value="caption-box-title" />
+<input type="hidden" name="field[]" value="caption-box-title" />
+<input type="hidden" name="@caption-box-group[]" value="caption-box-text" />
+<input type="hidden" name="field[]" value="caption-box-text" />
+```
 </template>
 
 <template layout="code" type="text/x-markdown" h-left>
 ## スタイルガイドの導入
 </template>
-
 
 <template layout="code" type="text/x-markdown" h-left>
 ## スタイルガイドの導入
@@ -93,31 +185,6 @@ HTML/CSSの確認
 <img src="./images/html_preview.png" style="width:100%;height:auto;">
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert h-left>
-## CSSのバッティングを回避
-
-クラス名の接頭辞には必ずディレクトリ名を付与するようにする
-
-<img src="./images/components.png" style="width:500px;height:auto;">
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## CSSのバッティングを回避
-admission-cardコンポーネント
-
-```css
-.admission-card-outer {
-	background-color: #F5F3EC;
-	padding: 40px 15px;
-}
-
-.admission-card-container {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-```
-</template>
-
 <template layout="code" type="text/x-markdown" h-left>
 gulpfile.js
 
@@ -128,36 +195,6 @@ atomic.build({
   dist:"themes/nucba2015/styleguide/resources/setting.json",
   markup:"html"
 });
-```
-</template>
-
-
-<template layout="code" type="text/x-markdown" h-left>
-## field.htmlの使い回し
-カスタムフィールドメーカーでフィールドを作る手間を軽減
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## field.htmlの使い回し
-
-見た目が同じなので、入力するデータの形式も似ていることが多い
-
-<img src="./images/field.png" style="width:500px;height:auto;">
-
-</template>
-
-
-
-<template layout="code" type="text/x-markdown" h-left>
-## field.htmlの使い回し
-
-fieldの変数もクラス名と合わせる
-
-```html
-<input type="hidden" name="@caption-box-group[]" value="caption-box-title" />
-<input type="hidden" name="field[]" value="caption-box-title" />
-<input type="hidden" name="@caption-box-group[]" value="caption-box-text" />
-<input type="hidden" name="field[]" value="caption-box-text" />
 ```
 </template>
 
