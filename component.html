@@ -23,8 +23,11 @@
 有限会社アップルップル 堀 悟大
 </template>
 
-<template layout="cover" invert type="text/x-markdown">
-メンテナンス案件、中、大規模案件向き
+<template layout="bullets" invert type="text/x-markdown">
+## 前提
+
+- 既存サイトのメンテナンス案件
+- 中・大規模案件向き
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
@@ -42,7 +45,7 @@
 ## 業務
 
 - JSライブラリの開発
-- a-blog cmsのフロント周りの担当。
+- a-blog cmsのフロント周りの担当
 - Web制作の受託案件
 </template>
 
@@ -291,8 +294,8 @@ gulpfile.js
 ```js
 var atomic = require('atomic-lab');
 atomic.build({
-  src:"themes/nucba2015/components/",
-  dist:"themes/nucba2015/styleguide/resources/setting.json",
+  src:"themes/example/components/",
+  dist:"themes/example/styleguide/resources/setting.json",
   markup:"html"
 });
 ```
