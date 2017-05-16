@@ -162,32 +162,11 @@ GET_Templateを使った際にも<br/>見た目や動作を保証しましょう
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ## コンポーネントベースで開発するには?
 
- - a-blog cmsのモジュールにとらわれない
  - コンポーネントごとにディレクトリーを切る
  - コンポーネントの命名規則
  - field.htmlの命名規則
+- a-blog cmsのモジュールにとらわれない
  - スタイルガイドの導入
-</template>
-
-<template layout="bullets" type="text/x-markdown" invert h-left>
-## a-blog cmsのモジュールにとらわれない
-
-SET_Templateの中ではなるべくa-blog cmsのモジュールを使わないようにしています。
-
-</template>
-
-<template layout="bullets" type="text/x-markdown" invert h-left>
-## a-blog cmsのモジュールにとらわれない
-
-
-```html
-<!-- BEGIN_MODULE Entry_Summary id="hoge" -->
-<!-- BEGIN entry:loop -->
-<!-- GET_Template id="caption-box" title="{title}" text="{summary}" -->
-<!-- END entry:loop -->
-<!-- END_MODULE Entry_Summary -->
-```
-
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
@@ -246,6 +225,27 @@ fieldの変数もクラス名と合わせる
 ```
 </template>
 
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## a-blog cmsのモジュールにとらわれない
+
+SET_Templateの中ではなるべくa-blog cmsのモジュールを使わないようにしています。
+
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## a-blog cmsのモジュールにとらわれない
+
+
+```html
+<!-- BEGIN_MODULE Entry_Summary id="hoge" -->
+<!-- BEGIN entry:loop -->
+<!-- GET_Template id="caption-box" title="{title}" text="{summary}" -->
+<!-- END entry:loop -->
+<!-- END_MODULE Entry_Summary -->
+```
+
+</template>
+
 <template layout="code" type="text/x-markdown" h-left>
 ## スタイルガイドの導入
 </template>
@@ -268,6 +268,8 @@ npm install atomic-lab --save-dev
 
 <img src="./images/preview.png" style="width:100%;height:auto;">
 </template>
+
+
 
 <template layout="code" type="text/x-markdown" h-left>
 ## スタイルガイドの導入
@@ -294,6 +296,13 @@ atomic.build({
 jsやcssなどのbuildプロセスに含めてしまえば<br/>スタイルガイドを意識する必要はありません。
 </template>
 
+
+<template layout="code" type="text/x-markdown" h-left>
+## まとめ
+
+- ルールさえ確立すればいつでもコンポーネントベースの開発は可能
+- ただ一度ルールを
+</template>
 
 <script src="./js/highlight.min.js"></script>
 <script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
