@@ -146,6 +146,8 @@ SET_Templateの中ではなるべくa-blog cmsのモジュールを使わない�
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
+## a-blog cmsのモジュールにとらわれない
+
 
 ```html
 <!-- BEGIN_MODULE Entry_Summary id="hoge" -->
@@ -169,6 +171,15 @@ SET_Templateの中ではなるべくa-blog cmsのモジュールを使わない�
 探しやすいようにディレクトリーと同じ名前をGET_Templateのidとします
 
 <img src="./images/components.png" style="width:500px;height:auto;">
+</template>
+
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## caption-box<br/>ディレクトリーの中身
+
+- caption-box.html (SET_Templateなどの記述)
+- caption-box.scss (caption-boxの見た目の記述)
+- field.html (入力内容の設定)
 </template>
 
 <template layout="code" type="text/x-markdown" h-left>
@@ -210,6 +221,17 @@ fieldの変数もクラス名と合わせる
 <template layout="code" type="text/x-markdown" h-left>
 ## スタイルガイドの導入
 
+atomic-labを使っています。
+
+```shell
+npm install atomic-lab --save-dev
+```
+</template>
+
+
+<template layout="code" type="text/x-markdown" h-left>
+## スタイルガイドの導入
+
 コンポーネントのプレビュー
 
 <img src="./images/preview.png" style="width:100%;height:auto;">
@@ -234,6 +256,10 @@ atomic.build({
   markup:"html"
 });
 ```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+jsやcssなどのbuildプロセスに含めてしまえば<br/>スタイルガイドを意識する必要はありません。
 </template>
 
 
