@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.css">
     <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+	<style>
+		.hljs-comment{
+			color: #FFF !important;
+		}
+	</style>
 </head>
 
 <body>
@@ -15,11 +20,9 @@
 <template layout="cover" invert type="text/x-markdown">
 ## コンポーネントベースの<br>Webサイト制作
 
-有限会社アップルップル 堀 悟大
-</template>
+#### メンテナンス案件、中、大規模案件向き
 
-<template layout="bullets" type="text/x-markdown" invert h-left>
-メンテナンス案件、中、大規模案件向き
+有限会社アップルップル 堀 悟大
 </template>
 
 
@@ -27,10 +30,12 @@
 ## 今日お話しすること
 
 - コンポーネントとは
-- コンポーネントベースで開発するには
 - コンポーネントベースにすることのメリット
+- コンポーネントベースで開発するには
 - まとめ
 </template>
+
+<!-- 事例を交えて紹介する -->
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ## コンポーネントとは
@@ -46,11 +51,8 @@ HTML/CSS/JavaScriptをセットで部品化すること
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert h-left>
-## Webコンポーネントの場合
-```html
-<caption-box></caption-box>
-```
+<template layout="bullets" type="text/x-markdown" invert>
+<img src="./images/hiraku.png" />
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
@@ -61,12 +63,42 @@ HTML/CSS/JavaScriptをセットで部品化すること
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert h-left>
+<template layout="bullets" type="text/x-markdown" invert>
+# caption-box
+
 <img src="./assets/component1.png"/>
 </template>
 
+
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ## つまりGET_TemplateをHTMLのタグとして考える！
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## コンポーネントベースで<br>開発するメリット
+- CSSの衝突防止
+- デザインのずれを防止する
+- 分業がしやすい
+- 他の案件で使える
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## デザインのずれを防止する
+
+すでに制作済みのコンポーネントを別のページで別のクラスで作ってしまう問題などを防げる
+</template>
+
+
+<template layout="code" type="text/x-markdown" h-left>
+## 分業がしやすい
+
+例）各コンポーネントごとにそれぞれ担当者をつけることで作業のコンフリクトが防げる
+</template>
+
+<template layout="code" type="text/x-markdown" invert h-left>
+## 他の案件でも使える
+
+- 似たような部品を他の案件で使うことになれば該当するディレクトリだけ移動すればいいので、他の案件でも使えます。
 </template>
 
 
@@ -79,7 +111,7 @@ HTML/CSS/JavaScriptをセットで部品化すること
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ## コンポーネントベースで開発するには?
 
- - 中でa-blog cmsのモジュールを使わない
+ - a-blog cmsのモジュールにとらわれない
  - コンポーネントごとにディレクトリーを切る
  - コンポーネントの命名規則
  - field.htmlの命名規則
@@ -87,7 +119,9 @@ HTML/CSS/JavaScriptをセットで部品化すること
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
-## 中でa-blog cmsのモジュールを使わない
+## a-blog cmsのモジュールにとらわれない
+
+SET_Templateの中ではなるべくモジュールを使わないようにしています。
 
 ```html
 <!-- BEGIN_MODULE Entry_Summary id="hoge" -->
@@ -97,7 +131,13 @@ HTML/CSS/JavaScriptをセットで部品化すること
 <!-- END_MODULE Entry_Summary -->
 ```
 
-こうすることで、Entry_Summaryではないモジュールでもコンポーネントを使用可能
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## 中でa-blog cmsのモジュールを使わない
+
+- 変数に縛られない開発が可能
+- こうすることで、Entry_Summaryではないモジュールでもコンポーネントを使用可能
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
@@ -170,32 +210,6 @@ atomic.build({
   markup:"html"
 });
 ```
-</template>
-
-<template layout="bullets" type="text/x-markdown" invert h-left>
-## メリット
-- サイト全体の統一感を出しやすい
-- 分業がしやすい
-- コンポーネントを使い回すことで作業を効率化
-</template>
-
-<template layout="bullets" type="text/x-markdown" invert h-left>
-## サイト全体の統一感を<br>出しやすい
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-デザイン原則を守ったサイト制作ができる!
-<img src="./images/nagoya.png" style="width:400px;height:auto;"> <img src="./images/nisshin.png" style="width:400px;height:auto;">
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## 分業がしやすい
-
-例）新人さんが入ったので、まずはコンポーネントを作ってもらう仕事から
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## コンポーネントを使い回すことで作業を効率化
 </template>
 
 
