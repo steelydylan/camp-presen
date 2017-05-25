@@ -82,7 +82,7 @@ GitHubでのスター数が世界や地域で何位なのかが確認できる�
 </div>
 </template>
 
-<template layout="code" type="text/x-markdown">
+<template layout="code" type="text/x-markdown" h-left>
 ### SmartPhoto.js
 
 ```html
@@ -91,7 +91,7 @@ GitHubでのスター数が世界や地域で何位なのかが確認できる�
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+<template layout="code" type="text/x-markdown" h-left>
 ### SmartPhoto.js
 
 ```js
@@ -101,10 +101,32 @@ $(function() {
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+<template layout="code" type="text/x-markdown" h-left>
 ### SmartPhoto.js
 
+加速度センサーによる動きを無効化する
 
+```js
+$(function() {
+  $(".js-smartPhoto").smartPhoto({
+    useOrientationApi: false
+  });
+});
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### SmartPhoto.js
+
+写真の拡大時に画像がプレビューエリアから<br/>はみ出さないようにする
+
+```js
+$(function() {
+  $(".js-smartPhoto").smartPhoto({
+    resizeStyle: 'fit'
+  });
+});
+```
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
@@ -113,6 +135,13 @@ $(function() {
 - イベントが取得できる
 - Orieantation APIに対応
 - 画像のグループ化ができる
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### SmartPhoto.js
+
+ダウンロードページ
+[https://github.com/appleple/SmartPhoto](https://github.com/appleple/SmartPhoto)
 </template>
 
 
@@ -135,12 +164,41 @@ $(function() {
 </div>
 </template>
 
+<template layout="code" type="text/x-markdown" h-left>
+### hiraku.js
+
+```html
+<link rel="stylesheet" type="text/css" href="./hiraku.css">
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="./hiraku.js"></script>
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### hiraku.js
+
+```js
+$(".js-offcanvas").hiraku({
+  btn: ".js-offcanvas-btn",
+  fixedHeader: ".js-fixed-header",
+  direction: "left",
+  breakpoint: 767
+});
+```
+</template>
+
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ## 他のJSとの違い
 - メニュー部分のHTMLをどこに配置してもいい。
 - 美しいアニメーション
 - アクセシビリティに対応
 - ヘッダが固定できる。
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### hiraku.js
+
+ダウンロードページ
+[https://github.com/appleple/hiraku](https://github.com/appleple/hiraku)
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
@@ -157,6 +215,28 @@ YoutubeやVimeoなどの動画をモーダルウィンドウで再生するた�
 <button class="js-modal-btn" data-video-id="202177974">Open Vimeo</button>
 </template>
 
+<template layout="code" type="text/x-markdown" h-left>
+### modal-video.js
+
+```html
+<link rel="stylesheet" type="text/css" href="/path/to/modal-video.css">
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="/path/to/modal-video.js"></script>
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### modal-video.js
+
+```html
+<button class="js-modal-btn" data-video-id="7TUOI23spt0">Videoを開く</button>
+```
+
+```js
+$(".js-modal-btn").modalVideo();
+```
+</template>
+
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ### a-table.js
 <img src="./images/a-table.png" style="width:auto;height:400px;"/>
@@ -170,6 +250,31 @@ YoutubeやVimeoなどの動画をモーダルウィンドウで再生するた�
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
 <iframe src="./examples/table.html" style="width:800px;height:800px;margin-top:200px;"></iframe>
+</template>
+
+<template layout="code" type="text/x-markdown">
+### a-table.js
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/a-table@1.2.3/css/a-table.css">
+<script src="https://unpkg.com/a-table@1.2.3/build/a-table.min.js"></script>
+```
+</template>
+
+<template layout="code" type="text/x-markdown">
+### a-table.js
+
+```js
+var table = new aTable('.table',{
+  lang:'ja'
+});
+table.afterEntered = function() {
+  console.log(this.getTable());
+}
+table.afterRendered = function() {
+  console.log(this.getTable());
+}
+```
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
@@ -244,19 +349,6 @@ examplesディレクトリーに使い方のdemoを設置
 </template>
 
 
-<template layout="bullets" type="text/x-markdown" invert h-left>
-### Echo JSへの宣伝
-
-JavaScriptに関するニュースなどを載せることができる掲示板のようなところ
-[http://www.echojs.com/](http://www.echojs.com/)
-</template>
-
-
-<template layout="bullets" type="text/x-markdown" invert h-left>
-### ソーシャルでの宣伝
-
-Twitter や Facebook など
-</template>
 
 <template layout="cover" h-left type="text/x-markdown" invert backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
 
