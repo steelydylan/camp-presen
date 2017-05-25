@@ -8,4 +8,4 @@
 - [アップルップルのOSS活動について](https://steelydylan.github.io/presen/ablogcms-camp-2017-spring-oss.html)
 - [コンポーネントベースのWebサイト制作](https://steelydylan.github.io/presen/ablogcms-camp-2017-spring-component.html)
 
-### [CPI Business Seminar @名古屋 - 電話・SMS・FAX・チャットを活用したWebによる業務自動化 -](https://cpi-server.doorkeeper.jp/events/60345)
+### [CPI Business Seminar @名古屋 - 電話・SMS・FAX・チャットを活用したWebによる業務自動化](https://cpi-server.doorkeeper.jp/events/60345)
