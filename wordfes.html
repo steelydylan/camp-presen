@@ -1,0 +1,429 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WordPressのプラグインを初めて自作してみた話</title>
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+	<link rel="stylesheet" href="./css/modal-video.min.css">
+	<link rel="stylesheet" href="./css/a-table.css">
+	<link rel="stylesheet" href="./fonts/a-table-icon.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- put your slides -->
+
+<template layout="cover" invert type="text/x-markdown">
+## WordPressのプラグインを<br>初めて自作してみた話
+
+有限会社アップルップル 堀 悟大
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## 自己紹介
+
+### 有限会社アップルップル
+
+<p><img alt="" class="avatar width-full rounded-2" height="230" src="https://avatars2.githubusercontent.com/u/2508691?v=3&amp;s=460" width="230"></p>
+
+### steelydylan
+</template>
+
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## 業務
+
+- JSライブラリの開発
+- a-blog cmsのUIまわりの担当
+- 最近はPHPを使ったサーバー周りの処理にも携わる
+- Web制作の受託案件
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+- OSS活動
+- 弊社が配布しているJavaScriptオープンソース
+- WordPressプラグイン開発環境について
+- WordPressプラグイン開発方法
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### OSS活動とは
+
+普段だったら社内で完結するソースコードをオープンにして、無償で利用できるようにしましょうという活動
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### OSS活動とは
+
+OSSとして提供されているソフトウェア
+
+例）PHP, Ruby, jQuery, Bootstrap, WordPress, Firefox
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### OSS活動とは
+
+弊社が販売しているCMS, a-blog cmsのJavaScriptの部分（フロントサイド）のオープンソース化
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+
+- WordPressやJimdo、MovableTypeなど他のCMSでも利用可能
+- 静的サイトでも利用可能
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### GitHub
+
+[https://github.com/appleple](https://github.com/appleple)
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### GitHub
+
+<img src="./images/github-repo.png" width="400px">
+</template>
+
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### Git Awards
+
+GitHubでのスター数が世界や地域で何位なのかが確認できるサイト
+</template>
+
+
+
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+<img src="./images/git-award.png">
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+弊社現在 <span style="font-size:40px">32</span>位
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### 弊社が配布しているオープンソース
+
+- SmartPhoto.js
+- hiraku.js
+- modal-video.js
+- a-table.js
+</template>
+
+
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### SmartPhoto.js
+<img src="./images/smartphoto.png" style="width:auto;height:400px;"/>
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+<div style="background-image:url(./images/iphone-frame.png);background-size:cover;padding:145px 35px 0 35px;">
+<iframe src="./examples/vanilla.html" style="width:400px;height:500px;margin-top:0;margin-bottom:0;"></iframe>
+</div>
+</div>
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### SmartPhoto.js
+
+```html
+<link rel="stylesheet" href="/css/smartphoto.min.css">
+<script src="/js/jquery-smartphoto.min.js"></script>
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### SmartPhoto.js
+
+```js
+$(function() {
+  $(".js-smartPhoto").smartPhoto();
+});
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### SmartPhoto.js
+
+加速度センサーによる動きを無効化する
+
+```js
+$(function() {
+  $(".js-smartPhoto").smartPhoto({
+    useOrientationApi: false
+  });
+});
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### SmartPhoto.js
+
+写真の拡大時に画像がプレビューエリアから<br/>はみ出さないようにする
+
+```js
+$(function() {
+  $(".js-smartPhoto").smartPhoto({
+    resizeStyle: 'fit'
+  });
+});
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## 他のJSとの違い
+- 設置が簡単
+- イベントが取得できる
+- Orieantation APIに対応
+- 画像のグループ化ができる
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### SmartPhoto.js
+
+ダウンロードページ
+
+[https://github.com/appleple/SmartPhoto](https://github.com/appleple/SmartPhoto)
+</template>
+
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### hiraku.js
+<img src="./images/hiraku.png" style="width:auto;height:400px;"/>
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+両サイドからの開閉
+<div style="background-image:url(./images/iphone-frame.png);background-size:cover;padding:145px 35px 0 35px;">
+<iframe src="./examples/both-sides/index.html" style="width:400px;height:500px;margin-top:0;margin-bottom:0;"></iframe>
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+メインキャンパスの固定
+<div style="background-image:url(./images/iphone-frame.png);background-size:cover;padding:145px 35px 0 35px;">
+<iframe src="./examples/body-fixed/index.html" style="width:400px;height:500px;margin-top:0;margin-bottom:0;"></iframe>
+</div>
+</div>
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### hiraku.js
+
+```html
+<link rel="stylesheet" type="text/css" href="./hiraku.css">
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="./hiraku.js"></script>
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### hiraku.js
+
+```js
+$(".js-offcanvas").hiraku({
+  btn: ".js-offcanvas-btn",
+  fixedHeader: ".js-fixed-header",
+  direction: "left",
+  breakpoint: 767
+});
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## 他のJSとの違い
+- メニュー部分のHTMLをどこに配置してもいい。
+- 美しいアニメーション
+- アクセシビリティに対応
+- ヘッダが固定できる。
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### hiraku.js
+
+ダウンロードページ
+
+[https://github.com/appleple/hiraku](https://github.com/appleple/hiraku)
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### modal-video.js
+<img src="./images/modal-video.png" style="width:auto;height:400px;"/>
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### modal-video.js
+YoutubeやVimeoなどの動画をモーダルウィンドウで再生するためのJS
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+<button class="js-modal-btn" data-video-id="202177974">Open Vimeo</button>
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### modal-video.js
+
+```html
+<link rel="stylesheet" type="text/css" href="/path/to/modal-video.css">
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="/path/to/modal-video.js"></script>
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### modal-video.js
+
+```html
+<button class="js-modal-btn" data-video-id="7TUOI23spt0">Videoを開く</button>
+```
+
+```js
+$(".js-modal-btn").modalVideo();
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### modal-video.js
+
+[https://github.com/appleple/modal-video](https://github.com/appleple/modal-video)
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### a-table.js
+<img src="./images/a-table.png" style="width:auto;height:400px;"/>
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### a-table.js
+
+テーブルを編集用のUIに変身させるJS。テーブルのセルなどの情報を取得できる。
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+<iframe src="./examples/table.html" style="width:800px;height:800px;margin-top:200px;"></iframe>
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### a-table.js
+
+Google SpreadSheetからの貼り付けが可能
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### a-table.js
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/a-table@1.2.3/css/a-table.css">
+<script src="https://unpkg.com/a-table@1.2.3/build/a-table.min.js"></script>
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### a-table.js
+
+```js
+var table = new aTable('.table',{
+  lang:'ja'
+});
+table.afterEntered = function() {
+  console.log(this.getTable());
+}
+table.afterRendered = function() {
+  console.log(this.getTable());
+}
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### a-table.js
+
+[https://codepen.io/appleple/pen/RpZqLZ](https://codepen.io/appleple/pen/RpZqLZ)
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### a-table.js
+
+ダウンロードページ
+
+[https://github.com/appleple/a-table.js](https://github.com/appleple/a-table.js)
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## WordPressプラグイン開発環境について
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### Dockerの利用
+dockerをおもな開発環境にしています。
+... 説明をもう少し
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### Githubの利用
+https://github.com/appleple/wp-smartphoto
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+WordPressプラグイン開発方法
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## 味噌は<code>add_action</code>と<code>add_filter</code>
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## add_action
+
+WordPressでは、特定のイベント時にそのイベントをhookしてそこに処理を挟み込むことができます。
+その時に使うのが<code>add_action</code>です。
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## add_filter
+
+WordPressでは、できあがったHTMLを正規表現などで書き換えてあらたなHTMLを生成するための関数が用意されています。
+add_filterです。
+</template>
+
+<template layout="cover" h-left type="text/x-markdown" invert backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
+
+# Thank You!
+
+Twitter: @steelydylan<br>
+GitHub: steelydylan<br>
+
+</template>
+
+
+
+<script src="./js/highlight.min.js"></script>
+<script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="./js/modal-video.min.js"></script>
+<script src="./js/a-table.min.js"></script>
+<script>
+	var talkie = Talkie({
+		wide: false
+	});
+
+	// talkie.key('s').subscribe(talkie.next$);
+	// talkie.key('n').subscribe(talkie.next$);
+	// talkie.key('a').subscribe(talkie.prev$);
+	// talkie.key('p').subscribe(talkie.prev$);
+
+	document.addEventListener('DOMContentLoaded', function() {
+		talkie.changed.subscribe(function(current) {
+			console.clear();
+			// print presenter notes
+			console.info(talkie.notes[current.getAttribute('data-page')]);
+		});
+		$(".js-modal-btn").modalVideo({channel:'vimeo'});
+	});
+	new aTable('.js-table');
+</script>
+</body>
+
+</html>
