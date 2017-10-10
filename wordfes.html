@@ -44,7 +44,7 @@
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
 - OSS活動
-- 弊社が配布しているJavaScriptオープンソース
+- 開発したJavaScriptオープンソースの紹介
 - WordPressプラグイン開発環境について
 - WordPressプラグイン開発方法
 </template>
@@ -351,75 +351,75 @@ table.afterRendered = function() {
 [https://github.com/appleple/a-table.js](https://github.com/appleple/a-table.js)
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## WordPressプラグイン開発環境について
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ### Dockerの利用
 dockerをおもな開発環境に。
 https://hub.docker.com/_/wordpress/
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ### Githubの利用
 https://github.com/appleple/wp-smartphoto
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## WordPressプラグイン開発方法
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## 今回作ったもの
 ### wp-smartphoto
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## wp-smartphoto
 さきほど紹介したSmartPhoto.jsをWordPressで簡単に使えるようにしたもの
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## 味噌は<code>add_action</code>と<code>add_filter</code>
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## プラグイン作成の工程
 - 管理画面の作成
 - フロント側の実装
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## 管理画面の作成
 - admin.php
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## add_theme_page
 
 SmartPhoto専用のページを用意
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## get_option
 
 下記の記述で、プラグインの設定を呼び出せる
 `get_option('smartphoto_options');`
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## フロントの実装
 - front.php
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## add_action
 
 WordPressでは、特定のイベント時にそのイベントをhookしてそこに処理を挟み込むことができる。
 </template>
 
-<template layout="code" type="text/x-markdown" h-left>
+<template layout="bullets" type="text/x-markdown" h-left>
 ## add_filter
 
 WordPressでは、できあがったHTMLを正規表現などで書き換えてあらたなHTMLを生成するための関数が用意されている。
