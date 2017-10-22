@@ -398,12 +398,18 @@ table.afterRendered = function() {
 </template>
 
 <template layout="bullets" type="text/x-markdown" h-left>
+## add_action
+
+WordPressでは、特定のイベント時にそのイベントをhookしてそこに処理を挟み込むことができる。
+今回は管理画面の時に処理を挟みたいので、<code>add_action('admin_menu', 関数);</code>を実行
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
 ## add_theme_page
 
 SmartPhoto専用のページを用意
 今回は外観の項目に入れたいので<code>edit_theme_options</code>を指定。
 </template>
-
 
 
 <template layout="bullets" type="text/x-markdown" h-left>
@@ -418,11 +424,6 @@ SmartPhoto専用のページを用意
 - front.php
 </template>
 
-<template layout="bullets" type="text/x-markdown" h-left>
-## add_action
-
-WordPressでは、特定のイベント時にそのイベントをhookしてそこに処理を挟み込むことができる。
-</template>
 
 <template layout="bullets" type="text/x-markdown" h-left>
 ## add_filter
