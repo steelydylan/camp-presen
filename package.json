@@ -1,0 +1,29 @@
+{
+  "name": "presen",
+  "version": "1.0.0",
+  "description": "for my presentation",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./ -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steelydylan/presen.git"
+  },
+  "keywords": [
+    "presentation"
+  ],
+  "author": "steelydylan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steelydylan/presen/issues"
+  },
+  "homepage": "https://github.com/steelydylan/presen#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}

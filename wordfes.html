@@ -195,6 +195,30 @@ $(function() {
 [https://github.com/appleple/SmartPhoto](https://github.com/appleple/SmartPhoto)
 </template>
 
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### LookForward.js
+
+<img src="./images/lookforward.png" style="width:800px;">
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### LookForward.js
+下のように書いておくだけでスムーズなページ遷移ができる JavaScript
+
+
+```html
+<a href="./a.html" class="js-lookforward" data-transition-enter="slideup"></a>
+<script>
+new LookForward('.js-lookforward');
+</script>
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
+### LookForward.js
+
+<a href="./examples/lookforward.html" class="js-lookforward" data-transition-enter="slideup">サンプル</a>
+</template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
 ### hiraku.js
@@ -456,10 +480,14 @@ wp-smartphoto enables you to enlarge images to see them clearly
 
 [https://wordpress.org/plugins/developers/add/](https://wordpress.org/plugins/developers/add/)
 </template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+
+</template>
 <template layout="bullets" type="text/x-markdown" h-left>
 ## さいごに
 
-プロジェクトに対してスターがもらえるコツ
+OSS配布時のコツ
 
 - Readmeをしっかり書く
 - ドキュメントをしっかりかく
@@ -486,6 +514,8 @@ GitHub: steelydylan<br>
 <script src="./js/highlight.min.js"></script>
 <script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
 <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/lookforward@0.1.1/css/lookforward.min.css">
+<script src="https://unpkg.com/lookforward@0.1.1/js/lookforward.min.js"></script>
 <script src="./js/modal-video.min.js"></script>
 <script src="./js/a-table.min.js"></script>
 <script>
@@ -507,6 +537,7 @@ GitHub: steelydylan<br>
 		$(".js-modal-btn").modalVideo({channel:'vimeo'});
 	});
 	new aTable('.js-table');
+  new LookForward('.js-lookforward');
 </script>
 </body>
 
