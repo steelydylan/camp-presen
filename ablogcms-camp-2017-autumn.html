@@ -168,6 +168,90 @@ a-blog cms 拡張アプリ画面
 <p><img alt="" class="avatar width-full rounded-2" src="./images/form.png" width="450"></p>
 </template>
 
+<template layout="bullets" type="text/x-markdown" h-left invert>
+## 拡張アプリを組み合わせることで...
+フォームの内容を Google Spreadsheetに挿入しつつ、Zoho,MailChimp などに立て続けにデータ登録し、最終的にSlackに通知といったことも可能です。
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left invert>
+# 拡張アプリの作り方
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left invert>
+## Point1
+次のバージョンから、Hook.phpのように拡張アプリ側にもHook処理が書けるようになります。
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## Zoho.phpのserviceProvider<br>メソッドの抜粋
+```php
+public function serviceProvider()
+{
+    $Hook = ACMS_Hook::singleton();
+    if ( HOOK_ENABLE && class_exists('AAPP_Zoho_Hook') ) {
+        $Hook->attach('Zoho', new AAPP_Zoho_Hook());
+    }
+}
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## Point2
+
+拡張アプリをインストールした時に拡張アプリの管理画面用のテンプレートが必要になってきます。
+管理画面用のテンプレートをコピーして設置してあげる処理を書いてあげると親切です。
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## Zoho.phpのinstallメソッドの抜粋
+```php
+public function install()
+{
+  $theme = config('theme');
+  $path = '/admin/app/zoho/index.html';
+  $to = THEMES_DIR . $theme . $path;
+  $from = AAPP_LIB_DIR . 'zoho/theme' . $path;
+  Storage::makeDirectory(THEMES_DIR . $theme . '/admin/app/zoho');
+
+  if ( !Storage::exists($to) ) {
+      Storage::copy($from, $to);
+  }
+}
+```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## Point3
+
+以前にも拡張アプリのハンズオンが行われたことがあり、記事も残っていますので参考にしてみましょう。
+[https://developer.a-blogcms.jp/blog/acmscamp/entry-2250.html](https://developer.a-blogcms.jp/blog/acmscamp/entry-2250.html)
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## 拡張アプリの今後の展望
+### 今後期待される仕組み1
+拡張アプリ自体はCMSのパッケージに含めず、他のパッケージとして管理して、そのアプリを管理画面上からダウンロードして使える仕組み
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## 拡張アプリの今後の展望
+### 今後期待される仕組み2
+a-blog cmsの開発元のみならず独自に開発した拡張アプリを他のユーザーでも公開できるような場を設ける
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+### 外部サービスと連携しやすい仕組みを今後開発していきます！
+</template>
+
+<template layout="cover" h-left type="text/x-markdown" invert backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
+    
+# Thank You!
+
+Twitter: @steelydylan<br>
+GitHub: steelydylan<br>
+
+</template>
+
 <script src="./js/highlight.min.js"></script>
 <script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
 <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
