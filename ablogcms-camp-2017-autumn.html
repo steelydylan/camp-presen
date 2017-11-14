@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>拡張アプリと a-blog cms</title>
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+    <link rel="stylesheet" href="./css/modal-video.min.css">
+    <link rel="stylesheet" href="./css/a-table.css">
+    <link rel="stylesheet" href="./fonts/a-table-icon.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- put your slides -->
+
+<template layout="cover" invert type="text/x-markdown">
+## 外部サービスと拡張アプリと<br> a-blog cms
+
+有限会社アップルップル 堀 悟大
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+1. CMSと他の外部サービスの連携について
+2. a-blog cms の拡張アプリとは
+3. 今回用意した拡張アプリの紹介
+4. 拡張アプリの作り方
+5. 拡張アプリの今後の展望
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+## 1. CMSと他の外部サービスの連携について
+
+全ての機能をCMS側に持つのではなく、ある分野に特化したサービスに柔軟に連携できることが今のCMSに求められている。
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+<p><img alt="" class="avatar width-full rounded-2"src="./images/a-blog_cms_apps.png"></p>
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+## 2. a-blog cms の拡張アプリとは
+
+- a-blog cmsのコアなプログラムをいじらなくても機能を提供できる仕組み
+- 開発側の人間以外でも気軽にプラグインを作って公開できるように用意された仕組み
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+## 2. a-blog cms の拡張アプリとは
+
+今後は外部サービスとの連携にもっとこの拡張アプリを使っていけばいいのでは？
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+### 次のバージョンでは<br>あまり使われていなかった拡張アプリが復活
+<p><img alt="" class="avatar width-full rounded-2"src="./images/app_index.png" width="800"></p>
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+以下が新たに追加された拡張アプリです。
+
+- Zoho
+- SpreadSheet
+- Slack
+- MailChimp
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+# Zoho
+
+お問い合わせフォームなどから送信された内容をZoho CRMに登録します。
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left>
+
+</template>
+    
+
+<script src="./js/highlight.min.js"></script>
+<script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    var talkie = Talkie({
+        wide: false
+    });
+
+    // talkie.key('s').subscribe(talkie.next$);
+    // talkie.key('n').subscribe(talkie.next$);
+    // talkie.key('a').subscribe(talkie.prev$);
+    // talkie.key('p').subscribe(talkie.prev$);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        talkie.changed.subscribe(function(current) {
+            console.clear();
+            // print presenter notes
+            console.info(talkie.notes[current.getAttribute('data-page')]);
+        });
+    });
+</script>
+</body>
+
+</html>
