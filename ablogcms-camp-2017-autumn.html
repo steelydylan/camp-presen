@@ -26,8 +26,7 @@
 1. CMSと他の外部サービスの連携について
 2. a-blog cms の拡張アプリとは
 3. 今回用意した拡張アプリの紹介
-4. 拡張アプリの作り方
-5. 拡張アプリの今後の展望
+4. 拡張アプリの今後の展望
 </template>
 
 <template layout="bullets" type="text/x-markdown" h-left invert>
@@ -173,60 +172,6 @@ a-blog cms 拡張アプリ画面
 フォームの内容を Google Spreadsheetに挿入しつつ、Zoho,MailChimp などに立て続けにデータ登録し、最終的にSlackに通知といったことも可能です。
 </template>
 
-<template layout="bullets" type="text/x-markdown" h-left invert>
-# 拡張アプリの作り方
-</template>
-
-<template layout="bullets" type="text/x-markdown" h-left invert>
-## Point1
-次のバージョンから、Hook.phpのように拡張アプリ側にもHook処理が書けるようになります。
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## Zoho.phpのserviceProvider<br>メソッドの抜粋
-```php
-public function serviceProvider()
-{
-    $Hook = ACMS_Hook::singleton();
-    if ( HOOK_ENABLE && class_exists('AAPP_Zoho_Hook') ) {
-        $Hook->attach('Zoho', new AAPP_Zoho_Hook());
-    }
-}
-```
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## Point2
-
-拡張アプリをインストールした時に拡張アプリの管理画面用のテンプレートが必要になってきます。
-管理画面用のテンプレートをコピーして設置してあげる処理を書いてあげると親切です。
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## Zoho.phpのinstallメソッドの抜粋
-```php
-public function install()
-{
-  $theme = config('theme');
-  $path = '/admin/app/zoho/index.html';
-  $to = THEMES_DIR . $theme . $path;
-  $from = AAPP_LIB_DIR . 'zoho/theme' . $path;
-  Storage::makeDirectory(THEMES_DIR . $theme . '/admin/app/zoho');
-
-  if ( !Storage::exists($to) ) {
-      Storage::copy($from, $to);
-  }
-}
-```
-</template>
-
-<template layout="code" type="text/x-markdown" h-left>
-## Point3
-
-以前にも拡張アプリのハンズオンが行われたことがあり、記事も残っていますので参考にしてみましょう。
-[https://developer.a-blogcms.jp/blog/acmscamp/entry-2250.html](https://developer.a-blogcms.jp/blog/acmscamp/entry-2250.html)
-</template>
-
 <template layout="code" type="text/x-markdown" h-left>
 ## 拡張アプリの今後の展望
 ### 今後期待される仕組み1
@@ -239,8 +184,18 @@ public function install()
 a-blog cmsの開発元のみならず独自に開発した拡張アプリを他のユーザーでも公開できるような場を設ける
 </template>
 
+<template layout="bullets" type="text/x-markdown" h-left invert>
+### こんな拡張アプリが欲しいというご要望お待ちしています！
+</template>
+
+<template layout="bullets" type="text/x-markdown" h-left invert>
+# 4. 拡張アプリの作り方
+聞きたい方はいらっしゃいますか？
+聞きたい方はハンズオンの時にお教えします！
+</template>
+
 <template layout="code" type="text/x-markdown" h-left>
-### 外部サービスと連携しやすい仕組みを今後開発していきます！
+### 外部サービスと連携しやすい仕組みを今後も開発していきます！
 </template>
 
 <template layout="cover" h-left type="text/x-markdown" invert backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
@@ -273,6 +228,12 @@ GitHub: steelydylan<br>
         });
     });
 </script>
+<style>
+[data-body-bg="bullets"] {
+    background-image: none;
+    background-color: #FFF;
+}
+</style>
 </body>
 
 </html>
