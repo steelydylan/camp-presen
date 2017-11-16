@@ -15,3 +15,26 @@
 	left: 50%;
 	margin-left: -100px;
 }
+
+@font-face {
+    font-family: 'noto_sansbold';
+    src: url('../fonts/NotoSans-Bold-webfont.eot');
+    src: url('../fonts/NotoSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/NotoSans-Bold-webfont.woff2') format('woff2'),
+         url('../fonts/NotoSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/NotoSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/NotoSans-Bold-webfont.svg#noto_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+[layout] h1, 
+[layout] h2, 
+[layout] h3, 
+[layout] h4, 
+[layout] h5, 
+[layout] h6,
+[layout] p{
+	font-family: 'noto_sansbold';
+}
