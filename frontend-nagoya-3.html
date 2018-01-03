@@ -17,7 +17,7 @@
     <!-- put your slides -->
 
 <template layout="cover" type="text/x-markdown" invert>
-## 上品な JavaScript UI 開発
+## 質の高い JavaScript UI 開発
 
 有限会社アップルップル 堀 悟大
 </template>
@@ -47,29 +47,12 @@
 <template layout="bulltes" type="text/x-markdown" invert>
 ## 5年後、10年後も使えるJavaScript
 
-React や jQuery などのライブラリに依存しない軽量な UI JavaScript 開発<br>
-これすごく大事!!
+React や jQuery などのライブラリに依存しない軽量な UI JavaScript 開発
 </template>
 
 <template layout="bulltes" type="text/x-markdown" invert>
 ## 5年後、10年後も使えるJavaScript
 <img src="./images/adaptor.png" />
-</template>
-
-<template layout="code" type="text/x-markdown">
-## ECMA Script6で開発
-jQueryから完全に独立させBrowserifyやWebpackの恩恵を受けて開発
-</template>
-
-<template layout="code" type="text/x-markdown">
-## GitHubに公開
-使ってくれたユーザーからのフィードバックを得られる
-</template>
-
-<template layout="code" type="text/x-markdown">
-## npmに公開
-<code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
-スタンドアロンでも使えるようにbuildを分けておく
 </template>
 
 <template layout="code" type="text/x-markdown">
@@ -84,25 +67,63 @@ new LiteEditor('#editor', {
 僕の場合、JavaScriptライブラリはクラスとして提供し、その第一引数をセレクター、第二引数をオプションで統一している
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
-## しっかりドキュメントを残す
-GitHubのgh-pagesを利用
+
+<template layout="code" type="text/x-markdown">
+## ECMA Script6で開発
+jQueryから完全に独立させBrowserifyやWebpackの恩恵を受けて開発
+
+<img src="./images/browserify.png">
+</template>
+
+<template layout="code" type="text/x-markdown">
+## GitHubに公開
+使ってくれたユーザーからのフィードバックを得られる
+<div style="text-align:center">
+<img src="./images/octocat.png" width="350">
+</div>
+</template>
+
+<template layout="code" type="text/x-markdown">
+## GitHubに公開
+gh-pagesを利用
+<div style="text-align:center">
+<img src="./images/octocat.png" width="350">
+</div>
+</template>
+
+<template layout="code" type="text/x-markdown">
+## npmに公開
+<code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
+スタンドアロンでも使えるようにbuildを分けておく
+
+<img src="./images/npm_logo.png" width="300">
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
 ## ESLintを利用して品質保証
 ルールの厳しいAirbnbを使用！
+
+<img src="./images/eslint.svg" width="200"><img src="./images/airbnb.png" width="200">
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
 ## E2Eテスト
 UIライブラリなので、ユニットテストだけではなく、E2Eテストをしっかりかく
+
+<img src="./images/mocha.svg">
+
+mocha + Nightmare.js
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
 ## Valunerabillityチェック
 <img src="./images/synk.svg">
 https://snyk.io/
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## Prettierをつかったコード整形
+<img src="./images/prettier.png" width="500">
 </template>
 
 <script src="./js/highlight.min.js"></script>
