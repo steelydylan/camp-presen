@@ -28,6 +28,12 @@
 - コード的なインターフェース
 </template>
 
+<template layout="bullets" type="text/x-markdown" invert>
+## UI
+- みんなが知っているような既存のサービスのUIを真似る
+（Word Excellなど）
+</template>
+
 <template layout="bulltes" type="text/x-markdown" invert>
 ## 5年後、10年後も使えるJavaScript
 
@@ -40,6 +46,17 @@ jQueryから完全に独立させBrowserifyやWebpackの恩恵を受けて開発
 </template>
 
 <template layout="code" type="text/x-markdown">
+## GitHubに公開
+使ってくれたユーザーからのフィードバックを得られる
+</template>
+
+<template layout="code" type="text/x-markdown">
+## npmに公開
+<code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
+スタンドアロンでも使えるようにbuildを分けておく
+</template>
+
+<template layout="code" type="text/x-markdown">
 ## 他のJavaScript と連携しやすい API
 
 ```js
@@ -47,12 +64,6 @@ new LiteEditor('#editor', {
 //option
 });
 ```
-</template>
-
-<template layout="bullets" type="text/x-markdown" invert>
-## UI
-- みんなが知っているような既存のサービスのUIを真似る
-（Word Excellなど）
 </template>
 
 <script src="./js/highlight.min.js"></script>
