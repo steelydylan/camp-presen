@@ -191,7 +191,6 @@ https://snyk.io/
 <template layout="code" type="text/x-markdown">
 ## npmに公開
 <code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
-スタンドアロンでも使えるようにbuildを分けておく
 
 <img src="./images/npm_logo.png" width="300">
 </template>
@@ -200,6 +199,13 @@ https://snyk.io/
 ## npmに公開
 
 npというライブラリを仕様して、公開前のテストやバージョン管理をする
+</template>
+
+<template layout="code" type="text/x-markdown">
+## npmに公開
+
+- ダウンロード時のインストール容量を減らすために.npmignoreをしっかり書いておく。
+- dependenciesとdevDependenciesをしっかりわける
 </template>
 
 <template layout="code" type="text/x-markdown">
