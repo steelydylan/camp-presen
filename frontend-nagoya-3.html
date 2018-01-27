@@ -30,6 +30,7 @@
 ## もくじ
 1. UIをよくするためのマインド
 2. UIの開発手法
+3. UIライブラリの公開方法
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
@@ -183,8 +184,27 @@ https://snyk.io/
 <img src="./images/prettier.png" width="500">
 </template>
 
+<template layout="bullets" type="text/x-markdown" invert>
+# 3. UIライブラリの公開方法
+</template>
+
+<template layout="code" type="text/x-markdown">
+## npmに公開
+<code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
+スタンドアロンでも使えるようにbuildを分けておく
+
+<img src="./images/npm_logo.png" width="300">
+</template>
+
+<template layout="code" type="text/x-markdown">
+## npmに公開
+
+npというライブラリを仕様して、公開前のテストやバージョン管理をする
+</template>
+
 <template layout="code" type="text/x-markdown">
 ## GitHubに公開
+単体でも使ってもらえるようにスタンドアローンビルドもしておく。
 使ってくれたユーザーからのフィードバックを得られる
 <div style="text-align:center">
 <img src="./images/octocat.png" width="350">
@@ -207,17 +227,12 @@ https://snyk.io/
 </div>
 </template>
 
-<template layout="code" type="text/x-markdown">
-## npmに公開
-<code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
-スタンドアロンでも使えるようにbuildを分けておく
-
-<img src="./images/npm_logo.png" width="300">
-</template>
-
 <template layout="bullets" type="text/x-markdown" invert>
 ### ツールやサービスなどを駆使して、<br>UIを開発するためのモチベーション維持
 </template>
+
+
+
 
 <script src="./js/highlight.min.js"></script>
 <script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
