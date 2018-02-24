@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>UIの改善とJavaScript</title>
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+    <link rel="stylesheet" href="./css/modal-video.min.css">
+    <link rel="stylesheet" href="./css/a-table.css">
+    <link rel="stylesheet" href="./fonts/a-table-icon.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- put your slides -->
+
+<template layout="cover" type="text/x-markdown" invert>
+## npmについての話
+
+有限会社アップルップル 堀 悟大
+</template>
+
+
+<template layout="code" type="text/x-markdown">
+## ECMA Script6で開発
+jQuery依存をたちBrowserifyやWebpackの恩恵を受けて開発
+
+<img src="./images/browserify.png">
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## ESLintを利用して品質保証
+ルールの厳しいAirbnbを使用！
+
+<img src="./images/eslint.svg" width="200"><img src="./images/airbnb.png" width="200">
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## E2Eテスト
+UIライブラリなので、ユニットテストだけではなく、E2Eテストをしっかりかく
+
+<img src="./images/mocha.svg">
+
+mocha + Nightmare.js
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## E2Eテスト
+
+最近はReactで書くことも多いので、
+Jest + react-test-renderer の組み合わせも試している
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## 見た目や挙動の視覚的テスト
+
+Storybook
+<div style="text-align:center">
+    <img src="./images/storybook.png">
+</div>
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## Valunerabillityチェック
+<img src="./images/synk.svg">
+https://snyk.io/
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## Prettierをつかったコード整形
+<img src="./images/prettier.png" width="500">
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+# 3. UIライブラリの公開方法
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## npmに公開
+<code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
+
+<img src="./images/npm_logo.png" width="300">
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## npmに公開
+
+https://github.com/sindresorhus/np
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## npmに公開
+
+```js
+{
+    "main": "lib/index.js",
+}
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## npmに公開
+
+- npというライブラリを仕様して、公開前のテストやバージョン管理をする
+- npをつかってgitのタグ付けを
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## npmに公開
+
+- ダウンロード時のインストール容量を減らすために.npmignoreをしっかり書いておく。
+- dependenciesとdevDependenciesをしっかり分ける。
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## GitHubに公開
+単体でも使ってもらえるようにスタンドアローンビルドもしておく。
+使ってくれたユーザーからのフィードバックを得られる
+<div style="text-align:center">
+<img src="./images/octocat.png" width="350">
+</div>
+</template>
+
+<template layout="code" type="text/x-markdown">
+## GitHubに公開
+ドキュメントの公開には gh-pages を利用
+<div style="text-align:center">
+<img src="./images/octocat.png" width="350">
+</div>
+</template>
+
+<template layout="code" type="text/x-markdown">
+## GitHubに公開
+
+<div style="text-align:center">
+    <img src="./images/ranking.png">
+</div>
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+### ツールやサービスなどを駆使して、<br>UIを開発するためのモチベーション維持
+</template>
+
+<template layout="cover" h-left type="text/x-markdown" invert backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
+
+# Thank You!
+
+Twitter: @steelydylan<br>
+GitHub: steelydylan<br>
+
+</template>
+
+
+
+
+
+<script src="./js/highlight.min.js"></script>
+<script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    var talkie = Talkie({
+        wide: false
+    });
+
+    // talkie.key('s').subscribe(talkie.next$);
+    // talkie.key('n').subscribe(talkie.next$);
+    // talkie.key('a').subscribe(talkie.prev$);
+    // talkie.key('p').subscribe(talkie.prev$);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        talkie.changed.subscribe(function(current) {
+            console.clear();
+            // print presenter notes
+            console.info(talkie.notes[current.getAttribute('data-page')]);
+        });
+    });
+</script>
+<style>
+[data-body-bg="bullets"] {
+    background-image: none;
+    background-color: #FFF;
+}
+[layout] {
+    font-family: 'Segoe UI';
+}
+[layout] h1 {
+    font-size: 4em;
+}
+[layout] h2 {
+    font-size: 3em;
+}
+[layout="cover"] * {
+    color: #FFF;
+}
+</style>
+</body>
+
+</html>
