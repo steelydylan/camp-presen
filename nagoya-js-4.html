@@ -16,20 +16,26 @@
 
     <!-- put your slides -->
 
-<template layout="cover" type="text/x-markdown" invert>
+<template layout="cover" type="text/x-markdown" invert h-left>
 ## npmについての話
 
 有限会社アップルップル 堀 悟大
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## npmに公開
 <code>npm install</code>すれば使えるようにしておくことで、そのライブラリを使用する際の手間を削減<br>
 
 <img src="./images/npm_logo.png" width="300">
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
+## npmに公開
+
+オープンソースとか深いことを考えずに自分用にパッケージをnpmに置いておくのもあり!
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## npmに公開
 
 ```sh
@@ -41,8 +47,9 @@ npm install modal-video --save
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## npmに公開する上で注意すること
+
 
 ### 1. インストールされる時のパスが正しいかどうか？
 ### 2. インストールされる時のパッケージの容量
@@ -50,7 +57,7 @@ npm install modal-video --save
 ### 4. その他
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## 1. インストールされる時のパスが正しいかどうか？
 
 ```js
@@ -60,14 +67,14 @@ npm install modal-video --save
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## 2. インストールされる時のパッケージの容量
 
 - ダウンロード時のインストール容量を減らすために.npmignoreをしっかり書いておく。
 - dependenciesとdevDependenciesをしっかり分ける。
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## 3. gitへのタグ付け、セマンティックバージョニング対応
 
 https://github.com/sindresorhus/np
@@ -76,7 +83,7 @@ https://github.com/sindresorhus/np
 
 
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## 3. gitへのタグ付け、セマンティックバージョニング対応
 
 - npというライブラリを仕様して、公開前のテストやバージョン管理をする
@@ -107,7 +114,7 @@ Reactならjestが便利
 
 
 
-<template layout="cover" h-left type="text/x-markdown" invert backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
+<template layout="cover" h-left type="text/x-markdown" invert h-left backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
 
 # Thank You!
 
@@ -151,9 +158,15 @@ GitHub: steelydylan<br>
 }
 [layout] h1 {
     font-size: 4em;
+    margin-bottom: 1em;
 }
 [layout] h2 {
     font-size: 3em;
+    margin-bottom: 1em;
+}
+[layout] h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
 }
 [layout="cover"] * {
     color: #FFF;
