@@ -73,7 +73,7 @@ npm adduser
 ### 4. その他
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert h-left>
+<template layout="code" type="text/x-markdown" h-left>
 ## 1. インストールされる時のパスが正しいかどうか？
 
 ```js
@@ -81,6 +81,13 @@ npm adduser
     "main": "lib/index.js",
 }
 ```
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## 1. インストールされる時のパスが正しいかどうか？
+
+このとき、libにはすでにbabelによって解決されたjsを設置している。<br>
+ただし、requireは解決していない
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert h-left>
