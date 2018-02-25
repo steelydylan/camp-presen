@@ -138,10 +138,19 @@ https://snyk.io/
 <img src="./images/prettier.png" width="500">
 </template>
 
-<template layout="bullets" type="text/x-markdown" invert>
+<template layout="bullets" type="text/x-markdown" invert h-left>
 ## 4. その他
 ### npmを使えないユーザーへの考慮
 standaloneでJSを読み込むだけでも使えるようにしておく
+</template>
+
+<template layout="code" type="text/x-markdown" h-left>
+## 4. その他
+### npmを使えないユーザーへの考慮
+
+```sh
+"build:global": "browserify ./src/index.js -t babelify -p licensify --standalone SmartPhoto -o ./js/smartphoto.js && npm run build:global:min"
+```
 </template>
 
 
