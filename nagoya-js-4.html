@@ -32,11 +32,26 @@
 <template layout="bullets" type="text/x-markdown" invert>
 ## npmに公開
 
-https://github.com/sindresorhus/np
+```sh
+npm install smartphoto --save
+```
+
+```sh
+npm install modal-video --save
+```
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
-## npmに公開
+## npmに公開する上で注意すること
+
+### 1. インストールされる時のパスが正しいかどうか？
+### 2. インストールされる時のパッケージの容量
+### 3. gitへのタグ付け、セマンティックバージョニング対応
+### 4. その他
+</template>
+
+<template layout="bullets" type="text/x-markdown" invert>
+## 1. インストールされる時のパスが正しいかどうか？
 
 ```js
 {
@@ -46,64 +61,51 @@ https://github.com/sindresorhus/np
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
-## npmに公開
-
-- npというライブラリを仕様して、公開前のテストやバージョン管理をする
-- npをつかってgitのタグ付けを
-</template>
-
-<template layout="bullets" type="text/x-markdown" invert>
-## npmに公開
+## 2. インストールされる時のパッケージの容量
 
 - ダウンロード時のインストール容量を減らすために.npmignoreをしっかり書いておく。
 - dependenciesとdevDependenciesをしっかり分ける。
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
-## GitHubに公開
-単体でも使ってもらえるようにスタンドアローンビルドもしておく。
-使ってくれたユーザーからのフィードバックを得られる
-<div style="text-align:center">
-<img src="./images/octocat.png" width="350">
-</div>
+## 3. gitへのタグ付け、セマンティックバージョニング対応
+
+https://github.com/sindresorhus/np
 </template>
 
-<template layout="code" type="text/x-markdown">
-## GitHubに公開
-ドキュメントの公開には gh-pages を利用
-<div style="text-align:center">
-<img src="./images/octocat.png" width="350">
-</div>
-</template>
 
-<template layout="code" type="text/x-markdown">
-## GitHubに公開
 
-<div style="text-align:center">
-    <img src="./images/ranking.png">
-</div>
-</template>
 
 <template layout="bullets" type="text/x-markdown" invert>
-## Valunerabillityチェック
+## 3. gitへのタグ付け、セマンティックバージョニング対応
+
+- npというライブラリを仕様して、公開前のテストやバージョン管理をする
+- npをつかってgitのタグ付けを
+</template>
+
+
+
+<template layout="bullets" type="text/x-markdown" invert>
+## 4. その他
+
+### Valunerabillityチェック
 <img src="./images/synk.svg">
 https://snyk.io/
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
-## Prettierをつかったコード整形
+## 4. その他
+### Prettierをつかったコード整形
 <img src="./images/prettier.png" width="500">
 </template>
 
 <template layout="bullets" type="text/x-markdown" invert>
-# 3. UIライブラリの公開方法
+## 4. その他
+### テスト
+Reactならjestが便利
 </template>
 
 
-
-<template layout="bullets" type="text/x-markdown" invert>
-### ツールやサービスなどを駆使して、<br>UIを開発するためのモチベーション維持
-</template>
 
 <template layout="cover" h-left type="text/x-markdown" invert backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
 
