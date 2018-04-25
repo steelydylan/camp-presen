@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>npmについての話</title>
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+    <link rel="stylesheet" href="./css/modal-video.min.css">
+    <link rel="stylesheet" href="./css/a-table.css">
+    <link rel="stylesheet" href="./fonts/a-table-icon.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- put your slides -->
+
+<template layout="cover" type="text/x-markdown" invert h-left>
+# 最新のウェブ技術を体験しよう
+
+有限会社アップルップル 堀 悟大
+</template>
+
+<script src="./js/highlight.min.js"></script>
+<script src="https://unpkg.com/talkiejs@0.12.1/dist/talkie.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    var talkie = Talkie({
+        wide: false
+    });
+
+    // talkie.key('s').subscribe(talkie.next$);
+    // talkie.key('n').subscribe(talkie.next$);
+    // talkie.key('a').subscribe(talkie.prev$);
+    // talkie.key('p').subscribe(talkie.prev$);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        talkie.changed.subscribe(function(current) {
+            console.clear();
+            // print presenter notes
+            console.info(talkie.notes[current.getAttribute('data-page')]);
+        });
+    });
+</script>
+
+</body>
+
+</html>
